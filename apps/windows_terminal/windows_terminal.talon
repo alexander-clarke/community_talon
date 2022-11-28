@@ -14,6 +14,7 @@ tag(): user.anaconda
 
 tag(): user.tabs
 # TODO: file_manager
+tag(): user.file_manager
 tag(): user.splits
 
 settings open: key(ctrl-,)

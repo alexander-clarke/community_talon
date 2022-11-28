@@ -16,3 +16,5 @@ file save: edit.save()
 file save all: edit.save_all()
 (pad | padding): user.insert_between(" ", " ")
 slap: edit.line_insert_down()
+clap: key(enter) 
+

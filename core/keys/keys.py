@@ -1,6 +1,6 @@
 from talon import Context, Module, actions, app
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "arch bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank easy".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -173,22 +173,19 @@ symbol_key_words = {
     "tilde": "~",
     "bang": "!",
     "down score": "_",
-    "underscore": "_",
-    "paren": "(",
-    "L paren": "(",
-    "left paren": "(",
-    "R paren": ")",
-    "right paren": ")",
-    "brace": "{",
-    "left brace": "{",
-    "brack": "{",
-    "bracket": "{",
-    "left bracket": "{",
-    "r brace": "}",
-    "right brace": "}",
-    "r brack": "}",
-    "r bracket": "}",
-    "right bracket": "}",
+    "under score": "_",
+    "round": "(",
+    "L round": "(",
+    "left round": "(",
+    "R round": ")",
+    "right round": ")",
+    "curly": "{",
+    "r curly": "}",
+    "right curly": "}",
+    # "brace": "{",
+    # "left brace": "{",
+    # "R brace": "}",
+    # "right brace": "}",
     "angle": "<",
     "left angle": "<",
     "less than": "<",
