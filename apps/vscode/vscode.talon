@@ -23,7 +23,7 @@ bar run: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
 bar test: user.vscode("workbench.view.testing.focus")
-bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
+bar (switch|toggle): user.vscode("workbench.action.toggleSidebarVisibility")
 
 symbol hunt [<user.text>]:
     user.vscode("workbench.action.gotoSymbol")

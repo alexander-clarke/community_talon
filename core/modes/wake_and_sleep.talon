@@ -1,10 +1,6 @@
 #defines the commands that sleep/wake Talon
 mode: all
 -
-^welcome back$:
-    user.mouse_wake()
-    user.history_enable()
-    user.talon_mode()
 ^sleep all [<phrase>]$:
     user.switcher_hide_running()
     user.history_disable()
@@ -13,5 +9,8 @@ mode: all
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
-^talon sleep [<phrase>]$: speech.disable()
-^talon wake$: speech.enable()
+^go to sleep [<phrase>]$: speech.disable()
+^wake up$: speech.enable()
+^touch and go to sleep [<phrase>]$: 
+  mouse_click(0)
+  speech.disable()
