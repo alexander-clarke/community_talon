@@ -43,10 +43,11 @@ def get_sorted_screens():
     """Return screens sorted by their topmost, then leftmost, edge.
     Screens will be sorted leftto-right, then top-to-bottom as a tiebreak.
     """
-    return sorted(
-        ui.screens(),
-        key=lambda screen: screen.visible_rect.left,
-    )
+    return ui.screens()
+    # return sorted(
+    #     sorted(ui.screens(), key=lambda screen: screen.visible_rect.top),
+    #     key=lambda screen: screen.visible_rect.left,
+    # )
 
 
 def show_screen_number(screen: ui.Screen, number: int):
