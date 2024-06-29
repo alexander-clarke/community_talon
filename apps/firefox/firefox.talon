@@ -2,6 +2,8 @@ app: firefox
 -
 tag(): browser
 tag(): user.tabs
+tag(): user.emoji
+
 tab search:
     browser.focus_address()
     insert("% ")
