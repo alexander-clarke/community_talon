@@ -19,6 +19,7 @@ grab <number>: user.idea_grab(number)
 (action | please) <user.text>:
     user.idea("action GotoAction")
     insert(text)
+quick actions: user.idea("action ShowIntentionActions")
 # Refactoring
 refactor: user.idea("action Refactorings.QuickListPopupAction")
 refactor <user.text>:
@@ -51,7 +52,9 @@ find (everywhere | all) <user.text> [over]:
     sleep(500ms)
     insert(text)
 (search | find) class: user.idea("action GotoClass")
-(search | find) file: user.idea("action GotoFile")
+file hunt:
+  print("test")
+  user.idea("action GotoFile")
 (search | find) path: user.idea("action FindInPath")
 (search | find) symbol: user.idea("action GotoSymbol")
 (search | find) symbol <user.text>$:
@@ -190,7 +193,9 @@ toggle [line] breakpoint: user.idea("action ToggleLineBreakpoint")
 toggle method breakpoint: user.idea("action ToggleMethodBreakpoint")
 run menu: user.idea("action ChooseRunConfiguration")
 run test: user.idea("action RunClass")
-run test again: user.idea("action Rerun")
+debug start: 
+  user.idea("action ChooseDebugConfiguration")
+run [test] again: user.idea("action Rerun")
 debug test: user.idea("action DebugClass")
 step over: user.idea("action StepOver")
 step into: user.idea("action StepInto")
@@ -259,6 +264,9 @@ select camel left: user.extend_camel_left()
 select camel right: user.extend_camel_right()
 go camel left: user.camel_left()
 go camel right: user.camel_right()
+
+state up: user.idea("action MoveStatementUp")
+state down: user.idea("action MoveStatementDown")
 
 # requires plug-in: black-pycharm
 blacken: user.idea("action BLACKReformatCode")
