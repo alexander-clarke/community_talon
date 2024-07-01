@@ -56,13 +56,13 @@ state default: "default:\nbreak;"
 #if so uncomment the two lines and comment out the rest accordingly
 push brackets:
     edit.line_end()
-    #insert("{")
-    #key(enter)
-    insert("{}")
-    edit.left()
+    insert("{")
     key(enter)
-    key(enter)
-    edit.up()
+    # insert("{}")
+    # edit.left()
+    # key(enter)
+    # key(enter)
+    # edit.up()
 
 # Declare variables or structs etc.
 # Ex. * int myList
@@ -86,3 +86,13 @@ toggle includes: user.code_toggle_libraries()
 include <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
+
+
+state you property:
+  insert("UPROPERTY(BlueprintReadWrite, EditAnywhere)")
+
+state you function:
+  insert("UFUNCTION(")
+
+
+{user.ue_types}: "{ue_types}"

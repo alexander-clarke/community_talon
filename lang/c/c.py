@@ -8,10 +8,24 @@ mod.setting(
     desc="Use the stdint datatype naming in commands by default",
 )
 
+
 ctx = Context()
 ctx.matches = r"""
 tag: user.c
 """
+
+ctx.lists["self.ue_types"] = {
+  'actor': "AActor",
+  'subclass': "TSubclassOf<",
+  'soft object pointer': "FSoftObjectPtr<",
+  'array': "TArray<",
+  'transform': "FTransform",
+  'vector': "FVector",
+  'name': "FName",
+}
+mod.list("ue_types", desc="ue types")
+
+
 
 ctx.lists["self.c_pointers"] = {
     "pointer": "*",
@@ -303,7 +317,7 @@ class UserActions:
         actions.auto_insert(" >>= ")
 
     def code_insert_null():
-        actions.auto_insert("NULL")
+        actions.auto_insert("nullptr")
 
     def code_insert_is_null():
         actions.auto_insert(" == NULL ")
@@ -312,8 +326,8 @@ class UserActions:
         actions.auto_insert(" != NULL")
 
     def code_state_if():
-        actions.insert("if () {\n}\n")
-        actions.key("up:2 left:3")
+        actions.insert("if ()")
+        actions.key("left")
 
     def code_state_else_if():
         actions.insert("else if () {\n}\n")
@@ -367,6 +381,7 @@ class UserActions:
 
         actions.user.paste(text)
         actions.edit.left()
+        
 
     # TODO - it would be nice that you integrate that types from c_cast
     # instead of defaulting to void
