@@ -1,4 +1,10 @@
+# (control mouse| parrot(cluck)): user.mouse_toggle_control_mouse()
 control mouse: user.mouse_toggle_control_mouse()
+# parrot(cluck): user.mouse_toggle_control_mouse()
+parrot(cluck):
+  user.mouse_toggle_control_mouse()
+parrot(tut):
+  mouse_click(1)
 zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()
@@ -58,8 +64,19 @@ right drag | righty drag:
     user.mouse_drag(1)
     # close the mouse grid
     user.grid_close()
+
+middle drag:
+  user.mouse_drag(2)
+  # close the mouse grid
+  user.grid_close()
 end drag | drag end: user.mouse_drag_end()
+<user.modifiers> drag:
+  key("{modifiers}:down")
+  user.mouse_drag(0)
+  key("{modifiers}:up")
+  # close the mouse grid
 wheel down: user.mouse_scroll_down()
+deck(pedal_left): user.mouse_scroll_down()
 wheel down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
