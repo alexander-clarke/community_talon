@@ -39,12 +39,30 @@ _search_engine_defaults = {
     "wiki": "https://en.wikipedia.org/w/index.php?search=%s",
 }
 
-ctx = Context()
-ctx.lists["self.website"] = get_list_from_csv(
+subreddit_defaults = {
+  "Dota": "Dota2",
+  "hardware": "hardware",
+  "gamedev": "gamedev",
+  "no context pics": "nocontextpics",
+}
+
+subreddit_list = get_list_from_csv(
+  "subreddits.csv",
+  headers = ("subreddit", "spoken name"),
+  default = subreddit_defaults,
+)
+
+subreddit_websites = {"sub " + k: "https://old.reddit.com/r/" + v for (k, v) in subreddit_list.items()}
+
+websites = get_list_from_csv(
     "websites.csv",
     headers=("URL", "Spoken name"),
     default=website_defaults,
 )
+websites.update(subreddit_websites)
+
+ctx = Context()
+ctx.lists["self.website"] = websites
 ctx.lists["self.search_engine"] = get_list_from_csv(
     "search_engines.csv",
     headers=("URL Template", "Name"),
