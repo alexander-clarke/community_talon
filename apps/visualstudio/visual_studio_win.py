@@ -15,10 +15,10 @@ class AppActions:
         actions.key("ctrl-f4")
 
     def tab_next():
-        actions.key("ctrl-tab")
+        actions.key("ctrl-alt-pagedown")
 
     def tab_previous():
-        actions.key("ctrl-shift-tab")
+        actions.key("ctrl-alt-pageup")
 
     def tab_reopen():
         actions.key("ctrl-1 ctrl-r enter")
