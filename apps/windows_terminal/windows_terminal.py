@@ -4,6 +4,14 @@ from talon import Context, Module, actions, ui
 
 ctx = Context()
 mod = Module()
+
+mod.apps.windows_terminal = """
+os: windows
+and app.name: WindowsTerminal.exe
+os: windows
+and app.exe: windowsterminal.exe
+"""
+
 ctx.matches = r"""
 app: windows_terminal
 """
@@ -34,6 +42,13 @@ class EditActions:
         actions.key("ctrl-shift-f")
         if text:
             actions.insert(text)
+            
+    def page_up():
+        actions.key('ctrl-shift-pageup')
+        
+    def page_down():
+        actions.key('ctrl-shift-pagedown')
+
 
 
 @ctx.action_class("user")
