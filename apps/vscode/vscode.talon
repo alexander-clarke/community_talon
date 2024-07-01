@@ -92,6 +92,7 @@ save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
 hint show: user.vscode("editor.action.triggerParameterHints")
+quick actions: user.vscode("editor.action.quickFix")
 definition show: user.vscode("editor.action.revealDefinition")
 definition peek: user.vscode("editor.action.peekDefinition")
 definition side: user.vscode("editor.action.revealDefinitionAside")
@@ -256,3 +257,8 @@ cell run: user.vscode("notebook.cell.execute")
 
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
+
+journal [<phrase>]: 
+  key(ctrl-shift-j)
+  
+  insert(phrase or "")
