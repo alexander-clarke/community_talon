@@ -3,6 +3,7 @@ This module gives us the list {user.system_paths} and the capture <user.system_p
 the list to easily refer to system paths in talon and python files. It also creates a file
 system_paths.csv in the settings folder so they user can easily add their own custom paths.
 """
+
 import os
 
 from talon import Context, Module, actions, app
@@ -15,6 +16,7 @@ ctx = Context()
 mod.list("system_paths", desc="List of system paths")
 
 user_path = os.path.expanduser("~")
+
 
 # We need to wait for ready before we can call "actions.path.talon_home()" and
 # "actions.path.talon_user()"
@@ -39,7 +41,6 @@ def on_ready():
 
         # this is probably not the correct way to check for onedrive, quick and dirty
         if os.path.isdir(os.path.expanduser(os.path.join("~", r"OneDrive\Desktop"))):
-
             onedrive_paths = {
                 "desktop": os.path.join(one_drive_path, "Desktop"),
                 "documents": os.path.join(one_drive_path, "Documents"),

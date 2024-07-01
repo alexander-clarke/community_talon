@@ -4,7 +4,6 @@ app: vscode
 tag(): user.find_and_replace
 tag(): user.line_commands
 tag(): user.multiple_cursors
-tag(): user.snippets
 tag(): user.splits
 tag(): user.tabs
 window reload: user.vscode("workbench.action.reloadWindow")
@@ -13,6 +12,10 @@ window close: user.vscode("workbench.action.closeWindow")
 
 please [<user.text>]:
     user.vscode("workbench.action.showCommands")
+    insert(user.text or "")
+
+go view [<user.text>]:
+    user.vscode("workbench.action.openView")
     insert(user.text or "")
 
 # Sidebar
@@ -25,8 +28,14 @@ bar source: user.vscode("workbench.view.scm")
 bar test: user.vscode("workbench.view.testing.focus")
 bar (switch|toggle): user.vscode("workbench.action.toggleSidebarVisibility")
 
+# Symbol search
 symbol hunt [<user.text>]:
     user.vscode("workbench.action.gotoSymbol")
+    sleep(50ms)
+    insert(text or "")
+
+symbol hunt all [<user.text>]:
+    user.vscode("workbench.action.showAllSymbols")
     sleep(50ms)
     insert(text or "")
 
@@ -42,13 +51,16 @@ focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
 show settings: user.vscode("workbench.action.openGlobalSettings")
 show settings json: user.vscode("workbench.action.openSettingsJson")
 show settings folder: user.vscode("workbench.action.openFolderSettings")
-show settings folder json:
-    user.vscode("workbench.action.openFolderSettingsFile")
+show settings folder json: user.vscode("workbench.action.openFolderSettingsFile")
 show settings workspace: user.vscode("workbench.action.openWorkspaceSettings")
-show settings workspace json:
-    user.vscode("workbench.action.openWorkspaceSettingsFile")
+show settings workspace json: user.vscode("workbench.action.openWorkspaceSettingsFile")
 show shortcuts: user.vscode("workbench.action.openGlobalKeybindings")
+show shortcuts json: user.vscode("workbench.action.openGlobalKeybindingsFile")
 show snippets: user.vscode("workbench.action.openSnippets")
+
+# VSCode Snippets
+snip (last | previous): user.vscode("jumpToPrevSnippetPlaceholder")
+snip next: user.vscode("jumpToNextSnippetPlaceholder")
 
 # Display
 centered switch: user.vscode("workbench.action.toggleCenteredLayout")
@@ -97,6 +109,7 @@ definition show: user.vscode("editor.action.revealDefinition")
 definition peek: user.vscode("editor.action.peekDefinition")
 definition side: user.vscode("editor.action.revealDefinitionAside")
 references show: user.vscode("editor.action.goToReferences")
+hierarchy peek: user.vscode("editor.showCallHierarchy")
 references find: user.vscode("references-view.find")
 format that: user.vscode("editor.action.formatDocument")
 format selection: user.vscode("editor.action.formatSelection")
@@ -126,7 +139,10 @@ go recent [<user.text>]:
 go edit: user.vscode("workbench.action.navigateToLastEditLocation")
 
 # Bookmarks. Requires Bookmarks plugin
-go marks: user.vscode("workbench.view.extension.bookmarks")
+bar marks: user.vscode("workbench.view.extension.bookmarks")
+go marks:
+    user.deprecate_command("2023-06-06", "go marks", "bar marks")
+    user.vscode("workbench.view.extension.bookmarks")
 toggle mark: user.vscode("bookmarks.toggle")
 go next mark: user.vscode("bookmarks.jumpToNext")
 go last mark: user.vscode("bookmarks.jumpToPrevious")
@@ -173,7 +189,7 @@ git merge: user.vscode("git.merge")
 git output: user.vscode("git.showOutput")
 git pull: user.vscode("git.pullRebase")
 git push: user.vscode("git.push")
-git push focus: user.vscode("git.pushForce")
+git push force: user.vscode("git.pushForce")
 git rebase abort: user.vscode("git.rebaseAbort")
 git reveal: user.vscode("git.revealInExplorer")
 git revert: user.vscode("git.revertChange")
@@ -191,7 +207,22 @@ pull request: user.vscode("pr.create")
 change next: key(alt-f5)
 change last: key(shift-alt-f5)
 
-#Debugging
+# Testing
+test run: user.vscode("testing.runAtCursor")
+test run file: user.vscode("testing.runCurrentFile")
+test run all: user.vscode("testing.runAll")
+test run failed: user.vscode("testing.reRunFailTests")
+test run last: user.vscode("testing.reRunLastRun")
+
+test debug: user.vscode("testing.debugAtCursor")
+test debug file: user.vscode("testing.debugCurrentFile")
+test debug all: user.vscode("testing.debugAll")
+test debug failed: user.vscode("testing.debugFailTests")
+test debug last: user.vscode("testing.debugLastRun")
+
+test cancel: user.vscode("testing.cancelRun")
+
+# Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
 step over: user.vscode("workbench.action.debug.stepOver")
 debug step into: user.vscode("workbench.action.debug.stepInto")
@@ -212,8 +243,7 @@ terminal last: user.vscode("workbench.action.terminal.focusPrevious")
 terminal split: user.vscode("workbench.action.terminal.split")
 terminal zoom: user.vscode("workbench.action.toggleMaximizedPanel")
 terminal trash: user.vscode("workbench.action.terminal.kill")
-terminal toggle:
-    user.vscode_and_wait("workbench.action.terminal.toggleTerminal")
+terminal toggle: user.vscode_and_wait("workbench.action.terminal.toggleTerminal")
 terminal scroll up: user.vscode("workbench.action.terminal.scrollUp")
 terminal scroll down: user.vscode("workbench.action.terminal.scrollDown")
 terminal <number_small>: user.vscode_terminal(number_small)
@@ -245,6 +275,7 @@ join lines: user.vscode("editor.action.joinLines")
 full screen: user.vscode("workbench.action.toggleFullScreen")
 
 curse undo: user.vscode("cursorUndo")
+curse redo: user.vscode("cursorRedo")
 
 select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
