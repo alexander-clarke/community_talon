@@ -241,6 +241,13 @@ class Actions:
         """move the mouse cursor to the center of the currently active window"""
         rect = ui.active_window().rect
         ctrl.mouse_move(rect.left + (rect.width / 2), rect.top + (rect.height / 2))
+  
+    def toggle_mouse_drag(button: int):
+      ''''''
+      if button in ctrl.mouse_buttons_down():
+          ctrl.mouse_click(button=button, up=True)
+      else:
+          ctrl.mouse_click(button=button, down=True)
 
 
 def show_cursor_helper(show):
