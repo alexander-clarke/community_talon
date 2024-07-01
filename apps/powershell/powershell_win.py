@@ -21,14 +21,27 @@ class EditActions:
 @ctx.action_class("user")
 class UserActions:
     def file_manager_refresh_title():
-        actions.insert(
-            "$Host.UI.RawUI.WindowTitle = 'Windows PowerShell: ' +  $(get-location)"
-        )
-        actions.key("enter")
+        pass
+        # actions.insert(
+            # "$Host.UI.RawUI.WindowTitle = 'Windows PowerShell: ' +  $(get-location)"
+        # )
+        # actions.key("enter")
         # action(user.file_manager_go_back):
         #    key("alt-left")
         # action(user.file_manager_go_forward):
         #    key("alt-right")
+        
+        '''
+in: ~\Documents\WindowsPowerShell
+function questue {
+    adb.exe shell "am broadcast -a android.intent.action.RUN -e cmd '$args'"
+}
+
+function prompt {
+  $Host.UI.RawUI.WindowTitle = 'Windows PowerShell: ' +  $(get-location)
+  "$pwd" + '> '
+}
+        '''
 
     def file_manager_open_parent():
         actions.insert("cd ..")

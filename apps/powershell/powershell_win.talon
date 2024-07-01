@@ -1,5 +1,5 @@
 os: windows
-and app.name: Windows PowerShell
+and win.title: /Windows PowerShell/
 os: windows
 and app.exe: powershell.exe
 -
@@ -14,3 +14,9 @@ tag(): user.generic_windows_shell
 tag(): user.git
 tag(): user.anaconda
 # tag(): user.kubectl
+
+tag(): user.svn
+
+tag(): user.unreal_commands
+
+quest ((you|u) ee| youey): insert("questue ")
