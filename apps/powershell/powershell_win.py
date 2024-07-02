@@ -21,11 +21,10 @@ class EditActions:
 @ctx.action_class("user")
 class UserActions:
     def file_manager_refresh_title():
-        pass
-        # actions.insert(
-            # "$Host.UI.RawUI.WindowTitle = 'Windows PowerShell: ' +  $(get-location)"
-        # )
-        # actions.key("enter")
+        actions.insert(
+            "$Host.UI.RawUI.WindowTitle = 'Windows PowerShell: ' +  $(get-location)"
+        )
+        actions.key("enter")
         # action(user.file_manager_go_back):
         #    key("alt-left")
         # action(user.file_manager_go_forward):
@@ -46,7 +45,7 @@ function prompt {
     def file_manager_open_parent():
         actions.insert("cd ..")
         actions.key("enter")
-        actions.user.file_manager_refresh_title()
+        # actions.user.file_manager_refresh_title()
 
     def file_manager_current_path():
         path = ui.active_window().title
@@ -63,7 +62,7 @@ function prompt {
         """opens the directory that's already visible in the view"""
         actions.insert(f'cd "{path}"')
         actions.key("enter")
-        actions.user.file_manager_refresh_title()
+        # actions.user.file_manager_refresh_title()
 
     def file_manager_select_directory(path: str):
         """selects the directory"""
