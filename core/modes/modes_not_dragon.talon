@@ -30,6 +30,7 @@ not speech.engine: dragon
 # engine, this controls Talon.
 ^go to sleep [<phrase>]$: speech.disable()
 ^talon sleep [<phrase>]$: speech.disable()
+^drowse [<phrase>]$: speech.disable()
 
 ^sleep all [<phrase>]$:
     user.switcher_hide_running()
