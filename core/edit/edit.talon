@@ -180,7 +180,7 @@ clap: key(enter)
     insert(" ")
 
 # Undo/redo
-(undo|fuck) that: edit.undo()
+(undo that)|(nope [that]): edit.undo()
 redo that: edit.redo()
 
 # Save
