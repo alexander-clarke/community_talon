@@ -39,8 +39,6 @@ not speech.engine: dragon
     user.help_hide()
     user.mouse_sleep()
     speech.disable()
-    user.engine_sleep()
-
 
 ^touch and go to sleep [<phrase>]$: 
   mouse_click(0)

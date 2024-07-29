@@ -25,10 +25,6 @@ class UserActions:
             "$Host.UI.RawUI.WindowTitle = 'Windows PowerShell: ' +  $(get-location)"
         )
         actions.key("enter")
-        # action(user.file_manager_go_back):
-        #    key("alt-left")
-        # action(user.file_manager_go_forward):
-        #    key("alt-right")
         
         '''
 in: ~\Documents\WindowsPowerShell
