@@ -76,4 +76,4 @@ spell that <user.formatters> <user.letters>:
 ^escape <user.text>$: user.dictation_insert(user.text)
 
 settings():
-  speech.timeout = 0.8
+  speech.timeout = 0.5
