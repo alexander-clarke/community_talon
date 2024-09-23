@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from talon import Context, Module, actions, settings, ui, app
-=======
 from talon import Context, Module, actions, app, settings, ui
->>>>>>> main
 
 mod = Module()
 mod.tag("draft_editor_active", "Indicates whether the draft editor has been activated")
