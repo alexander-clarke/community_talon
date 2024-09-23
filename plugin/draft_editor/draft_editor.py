@@ -86,24 +86,11 @@ class Actions:
 
     def draft_editor_submit():
         """Submit/save draft editor"""
-        global last_draft
-        last_draft = close_editor()
-        try:
-            actions.user.switcher_focus_window(original_window)
-        except Exception:
-            app.notify("Failed to focus on window to submit draft, manually focus on intended destination and use draft submit again")
-        else:
-            actions.sleep("300ms")
-            actions.user.paste(last_draft)
-
+        close_editor(submit_draft=True)
 
     def draft_editor_discard():
         """Discard draft editor"""
-        close_editor()
-        try:
-            actions.user.switcher_focus_window(original_window)
-        except Exception:
-            app.notify("Failed to focus on previous window, leaving editor open")
+        close_editor(submit_draft=False)
 
     def draft_editor_paste_last():
         """Paste last submitted draft"""
