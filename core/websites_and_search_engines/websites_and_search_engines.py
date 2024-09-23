@@ -1,7 +1,7 @@
 import webbrowser
 from urllib.parse import quote_plus
 
-from talon import Context, Module
+from talon import Module
 
 from ..user_settings import get_list_from_csv
 
@@ -12,66 +12,24 @@ mod.list(
     desc="A search engine.  Any instance of %s will be replaced by query text",
 )
 
-# Please do not edit these defaults.  Instead, add / edit your own entries in
-# settings/websites.csv in your user directory.
-website_defaults = {
-    "talon home page": "http://talonvoice.com",
-    "talon slack": "http://talonvoice.slack.com/messages/help",
-    "talon wiki": "https://talon.wiki/",
-    "talon practice": "https://chaosparrot.github.io/talon_practice/",
-    "talon repository search": "https://search.talonvoice.com/search/",
-    "amazon": "https://www.amazon.com/",
-    "dropbox": "https://dropbox.com/",
-    "google": "https://www.google.com/",
-    "google calendar": "https://calendar.google.com",
-    "google maps": "https://maps.google.com/",
-    "google scholar": "https://scholar.google.com/",
-    "gmail": "https://mail.google.com/",
-    "github": "https://github.com/",
-    "gist": "https://gist.github.com/",
-    "wikipedia": "https://en.wikipedia.org/",
-    "youtube": "https://www.youtube.com/",
-}
+# mod.list("subreddit", desc="A subreddit")
 
-# Please do not edit these defaults.  Instead, add / edit your own entries in
-# settings/search_engines.csv in your user directory.
-_search_engine_defaults = {
-    "amazon": "https://www.amazon.com/s/?field-keywords=%s",
-    "google": "https://www.google.com/search?q=%s",
-    "map": "https://maps.google.com/maps?q=%s",
-    "scholar": "https://scholar.google.com/scholar?q=%s",
-    "wiki": "https://en.wikipedia.org/w/index.php?search=%s",
-}
+# subreddit_defaults = {
+#   "Dota": "Dota2",
+#   "hardware": "hardware",
+#   "gamedev": "gamedev",
+#   "no context pics": "nocontextpics",
+# }
 
-subreddit_defaults = {
-  "Dota": "Dota2",
-  "hardware": "hardware",
-  "gamedev": "gamedev",
-  "no context pics": "nocontextpics",
-}
+# subreddit_list = get_list_from_csv(
+#   "subreddits.csv",
+#   headers = ("subreddit", "spoken name"),
+#   default = subreddit_defaults,
+# )
 
-subreddit_list = get_list_from_csv(
-  "subreddits.csv",
-  headers = ("subreddit", "spoken name"),
-  default = subreddit_defaults,
-)
+# subreddit_websites = {"sub " + k: "https://old.reddit.com/r/" + v for (k, v) in subreddit_list.items()}
 
-subreddit_websites = {"sub " + k: "https://old.reddit.com/r/" + v for (k, v) in subreddit_list.items()}
-
-websites = get_list_from_csv(
-    "websites.csv",
-    headers=("URL", "Spoken name"),
-    default=website_defaults,
-)
-websites.update(subreddit_websites)
-
-ctx = Context()
-ctx.lists["self.website"] = websites
-ctx.lists["self.search_engine"] = get_list_from_csv(
-    "search_engines.csv",
-    headers=("URL Template", "Name"),
-    default=_search_engine_defaults,
-)
+# websites.update(subreddit_websites)
 
 
 @mod.action_class
