@@ -1,6 +1,6 @@
 list: user.letter
 -
-air: a
+arch: a
 bat: b
 cap: c
 drum: d
@@ -25,4 +25,4 @@ vest: v
 whale: w
 plex: x
 yank: y
-zip: z
+easy: z

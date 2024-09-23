@@ -1,0 +1,17 @@
+list: user.system_paths
+hostname: 00486-AlexandeC
+-
+user: C:\Users\AlexanderClarke
+profile: C:\Users\AlexanderClarke
+desktop: C:\Users\AlexanderClarke\Desktop
+desk: C:\Users\AlexanderClarke\Desktop
+documents: C:\Users\AlexanderClarke\Documents
+docks: C:\Users\AlexanderClarke\Documents
+downloads: C:\Users\AlexanderClarke\Downloads
+music: C:\Users\AlexanderClarke\Music
+pictures: C:\Users\AlexanderClarke\Pictures
+videos: C:\Users\AlexanderClarke\Videos
+talon home: C:\Users\AlexanderClarke\AppData\Roaming\talon
+talon user: C:\Users\AlexanderClarke\AppData\Roaming\talon\user
+builds: D:\1.OUTPUT\1.UNREAL\release
+slvr: D:\Perforce\SLVR
