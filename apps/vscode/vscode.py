@@ -224,12 +224,12 @@ class UserActions:
         actions.user.vscode("workbench.action.splitEditor")
 
     def split_number(index: int):
-        """Navigates to a the specified split"""
-        if index < 9:
-            if is_mac:
-                actions.key(f"cmd-{index}")
-            else:
-                actions.key(f"ctrl-{index}")
+        ordinal = [
+            'First', 'Second', 'Third', 'Fourth', 'Fifth','Sixth','Seventh','Eighth','Last',
+        ]
+
+        if 0 <= index < len(ordinal):
+            actions.user.vscode(f"workbench.action.focus{ordinal}EditorGroup")
 
     # splits.py support end
 
@@ -288,7 +288,6 @@ class UserActions:
         # Duplicates the current tab into a new tab group
         # vscode does not allow duplicate tabs in the same tab group, and so is implemented through splits
         actions.user.split_window_vertically()
-    
     # tabs.py support end
 
     # find_and_replace.py support begin
