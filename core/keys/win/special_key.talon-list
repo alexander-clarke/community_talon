@@ -15,5 +15,6 @@ tab: tab
 wipe: backspace
 delete: backspace
 forward delete: delete
+junk: delete
 menu key: menu
 print screen: printscr

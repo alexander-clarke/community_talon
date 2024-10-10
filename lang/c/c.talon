@@ -59,7 +59,7 @@ state default: "default:\nbreak;"
 #best used with a push like command
 #the below example may not work in editors that automatically add the closing brace
 #if so uncomment the two lines and comment out the rest accordingly
-push braces:
+push brackets:
     edit.line_end()
     insert("{")
     key(enter)
@@ -91,13 +91,5 @@ toggle includes: user.code_toggle_libraries()
 include <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
-
-
-state you property:
-  insert("UPROPERTY(BlueprintReadWrite, EditAnywhere)")
-
-state you function:
-  insert("UFUNCTION(")
-
 
 {user.ue_types}: "{ue_types}"

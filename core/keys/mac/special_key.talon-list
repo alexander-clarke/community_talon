@@ -14,3 +14,4 @@ tab: tab
 wipe: backspace
 delete: backspace
 forward delete: delete
+junk: delete

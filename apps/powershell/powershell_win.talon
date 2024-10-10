@@ -16,6 +16,8 @@ tag(): user.anaconda
 # tag(): user.kubectl
 
 tag(): user.svn
+tag(): user.p4
+tag(): user.adb
 
 tag(): user.unreal_commands
 

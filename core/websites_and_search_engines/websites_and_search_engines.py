@@ -3,8 +3,6 @@ from urllib.parse import quote_plus
 
 from talon import Module
 
-from ..user_settings import get_list_from_csv
-
 mod = Module()
 mod.list("website", desc="A website.")
 mod.list(

@@ -5,3 +5,11 @@ app: vscode
 win.title: /focus:\[Terminal\]/
 -
 tag(): terminal
+
+tag(): user.generic_windows_shell
+tag(): user.git
+tag(): user.anaconda
+
+tag(): user.svn
+tag(): user.p4
+tag(): user.adb
