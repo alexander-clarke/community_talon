@@ -1,6 +1,6 @@
 parrot(tut):
   mouse_click(1)
-control mouse: tracking.control_toggle()
+control mouse: tracking.control1_toggle()
 parrot(cluck): tracking.control_toggle()
 control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()

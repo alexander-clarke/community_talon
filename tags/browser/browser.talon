@@ -10,6 +10,7 @@ address copy | url copy | copy address | copy url:
     edit.copy()
 go home: browser.go_home()
 go to {user.website}: browser.go(website)
+go to sub {user.subreddit}: browser.go("https://old.reddit.com/r/{subreddit}")
 go private: browser.open_private_window()
 
 bookmark it: browser.bookmark()

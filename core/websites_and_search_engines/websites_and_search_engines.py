@@ -10,7 +10,7 @@ mod.list(
     desc="A search engine.  Any instance of %s will be replaced by query text",
 )
 
-# mod.list("subreddit", desc="A subreddit")
+mod.list("subreddit", desc="A subreddit")
 
 # subreddit_defaults = {
 #   "Dota": "Dota2",

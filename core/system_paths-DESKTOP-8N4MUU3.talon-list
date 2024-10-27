@@ -1,0 +1,18 @@
+list: user.system_paths
+hostname: DESKTOP-8N4MUU3
+-
+user: C:\Users\alexa
+profile: C:\Users\alexa
+desktop: C:\Users\alexa\Desktop
+desk: C:\Users\alexa\Desktop
+documents: C:\Users\alexa\Documents
+docks: C:\Users\alexa\Documents
+downloads: C:\Users\alexa\Downloads
+music: C:\Users\alexa\Music
+pictures: C:\Users\alexa\Pictures
+videos: C:\Users\alexa\Videos
+talon home: C:\Users\alexa\AppData\Roaming\talon
+talon user: C:\Users\alexa\AppData\Roaming\talon\user
+Ziggy: C:/Users/alexa/tortoisesvnroot/jam/trunk/Ziggy
+Ziggy oculus: I:/SVN Source 2/trunk/Ziggy
+builds archive: I:/Ziggy/Builds/
