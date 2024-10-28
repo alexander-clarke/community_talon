@@ -224,12 +224,21 @@ class UserActions:
         actions.user.vscode("workbench.action.splitEditor")
 
     def split_number(index: int):
-        ordinal = [
-            'First', 'Second', 'Third', 'Fourth', 'Fifth','Sixth','Seventh','Eighth','Last',
+        supported_ordinals = [
+            "First",
+            "Second",
+            "Third",
+            "Fourth",
+            "Fifth",
+            "Sixth",
+            "Seventh",
+            "Eighth",
         ]
 
-        if 0 <= index < len(ordinal):
-            actions.user.vscode(f"workbench.action.focus{ordinal[index]}EditorGroup")
+        if 0 <= index - 1 < len(supported_ordinals):
+            actions.user.vscode(
+                f"workbench.action.focus{supported_ordinals[index - 1]}EditorGroup"
+            )
 
     # splits.py support end
 

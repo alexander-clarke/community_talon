@@ -244,6 +244,9 @@ class UserActions:
     def code_operator_bitwise_not():
         actions.auto_insert("~")
 
+    def code_operator_bitwise_not():
+        actions.auto_insert("~")
+
     def code_operator_bitwise_left_shift():
         actions.auto_insert(" << ")
 
