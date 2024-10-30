@@ -91,5 +91,3 @@ toggle includes: user.code_toggle_libraries()
 include <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
-
-{user.ue_types}: "{ue_types}"

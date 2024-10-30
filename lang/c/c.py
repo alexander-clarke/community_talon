@@ -8,18 +8,6 @@ ctx.matches = r"""
 code.language: c
 """
 
-ctx.lists["self.ue_types"] = {
-  'actor': "AActor",
-  'subclass': "TSubclassOf<",
-  'soft object pointer': "FSoftObjectPtr<",
-  'array': "TArray<",
-  'transform': "FTransform",
-  'vector': "FVector",
-  'name': "FName",
-}
-mod.list("ue_types", desc="ue types")
-
-
 
 ctx.lists["self.c_pointers"] = {
     "pointer": "*",
@@ -371,7 +359,7 @@ class UserActions:
         actions.auto_insert("false")
 
     def code_comment_line_prefix():
-        actions.auto_insert("//")
+        actions.auto_insert("// ")
 
     def code_insert_function(text: str, selection: str):
         if selection:
@@ -381,7 +369,6 @@ class UserActions:
 
         actions.user.paste(text)
         actions.edit.left()
-        
 
     # TODO - it would be nice that you integrate that types from c_cast
     # instead of defaulting to void
