@@ -50,8 +50,8 @@ find (everywhere | all) <user.text> [over]:
     insert(text)
 (search | find) class: user.idea("action GotoClass")
 file hunt:
-  print("test")
-  user.idea("action GotoFile")
+    print("test")
+    user.idea("action GotoFile")
 (search | find) path: user.idea("action FindInPath")
 (search | find) symbol: user.idea("action GotoSymbol")
 (search | find) symbol <user.text>$:
@@ -189,8 +189,8 @@ toggle [line] breakpoint: user.idea("action ToggleLineBreakpoint")
 toggle method breakpoint: user.idea("action ToggleMethodBreakpoint")
 run menu: user.idea("action ChooseRunConfiguration")
 run test: user.idea("action RunClass")
-debug start: 
-  user.idea("action ChooseDebugConfiguration")
+debug start:
+    user.idea("action ChooseDebugConfiguration")
 run [test] again: user.idea("action Rerun")
 debug test: user.idea("action DebugClass")
 step over: user.idea("action StepOver")
@@ -292,3 +292,5 @@ state down: user.idea("action MoveStatementDown")
 
 # requires plug-in: black-pycharm
 blacken: user.idea("action BLACKReformatCode")
+
+open in code: user.open_in_code()

@@ -6,6 +6,7 @@ from talon import Context, Module, actions
 language_extensions = {
     # 'assembly': 'asm s',
     # 'bash': 'bashbook sh',
+    "config": "ini",
     "batch": "bat",
     "c": "c h cpp hpp",
     # 'cmake': 'cmake',

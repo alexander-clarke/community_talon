@@ -165,6 +165,10 @@ class Actions:
             global extendCommands
             extendCommands = []
 
+    def open_in_code():
+        """"""
+        actions.user.system_command_nb(f"code {actions.win.filename()}")
+
 
 ctx.matches = r"""
 app: jetbrains
