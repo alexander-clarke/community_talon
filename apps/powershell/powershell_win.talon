@@ -15,10 +15,12 @@ tag(): user.git
 tag(): user.anaconda
 # tag(): user.kubectl
 
+tag(): user.file_manager
+
 tag(): user.svn
 tag(): user.p4
 tag(): user.adb
 
 tag(): user.unreal_commands
 
-quest ((you|u) ee| youey): insert("questue ")
+quest ((you | u) ee | youey): insert("questue ")
