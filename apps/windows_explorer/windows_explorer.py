@@ -14,6 +14,13 @@ os: windows
 and app.exe: /^explorer\.exe$/i
 """
 
+mod.apps.files = r"""
+os: windows
+and app.name: Files
+os: windows
+and app.exe: /^files\.exe$/i
+"""
+
 # many commands should work in most save/open dialog.
 # note the "show options" stuff won't work unless work
 # unless the path is displayed in the title, which is rare for those
@@ -27,6 +34,7 @@ ctx = Context()
 ctx.matches = r"""
 app: windows_explorer
 app: windows_file_browser
+app: explorerpp
 """
 
 user_path = os.path.expanduser("~")
@@ -92,6 +100,9 @@ class UserActions:
 
     def file_manager_current_path():
         path = ui.active_window().title
+
+        path = path.replace(" - File Explorer", "")
+        path = path.replace(" - Explorer++", "")
 
         if path in directories_to_remap:
             path = directories_to_remap[path]
