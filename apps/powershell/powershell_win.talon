@@ -23,4 +23,8 @@ tag(): user.adb
 
 tag(): user.unreal_commands
 
+# function questue {    adb.exe shell "am broadcast -a android.intent.action.RUN -e cmd '$args'"},
 quest ((you | u) ee | youey): insert("questue ")
+
+settings():
+    user.powershell_always_refresh_title = false
