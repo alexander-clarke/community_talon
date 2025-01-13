@@ -1,7 +1,7 @@
 import webbrowser
 from urllib.parse import quote_plus
 
-from talon import Module
+from talon import Context, Module
 
 mod = Module()
 mod.list("website", desc="A website.")
@@ -12,23 +12,10 @@ mod.list(
 
 mod.list("subreddit", desc="A subreddit")
 
-# subreddit_defaults = {
-#   "Dota": "Dota2",
-#   "hardware": "hardware",
-#   "gamedev": "gamedev",
-#   "no context pics": "nocontextpics",
-# }
-
-# subreddit_list = get_list_from_csv(
-#   "subreddits.csv",
-#   headers = ("subreddit", "spoken name"),
-#   default = subreddit_defaults,
-# )
-
-# subreddit_websites = {"sub " + k: "https://old.reddit.com/r/" + v for (k, v) in subreddit_list.items()}
-
-# websites.update(subreddit_websites)
-
+ctx_browser = Context()
+ctx_browser.matches = r"""
+tag: browser
+"""
 
 @mod.action_class
 class Actions:
@@ -40,3 +27,8 @@ class Actions:
         """Search a search engine for given text"""
         url = search_template.replace("%s", quote_plus(search_text))
         webbrowser.open(url)
+
+
+@ctx_browser.capture("user.address", rule="{user.website}")
+def address(m) -> str:
+    return m.website

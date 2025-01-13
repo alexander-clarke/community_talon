@@ -15,10 +15,16 @@ tag(): user.git
 tag(): user.anaconda
 # tag(): user.kubectl
 
+tag(): user.file_manager
+
 tag(): user.svn
 tag(): user.p4
 tag(): user.adb
 
 tag(): user.unreal_commands
 
-quest ((you|u) ee| youey): insert("questue ")
+# function questue {    adb.exe shell "am broadcast -a android.intent.action.RUN -e cmd '$args'"},
+quest ((you | u) ee | youey): insert("questue ")
+
+settings():
+    user.powershell_always_refresh_title = false

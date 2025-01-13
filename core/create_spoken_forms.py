@@ -431,7 +431,7 @@ def generate_string_subsequences(
     # Except for:
     # 3. strings shorter than minimum_term_length
     # 4. strings in words_to_exclude.
-    term_sequence = source.split(" ")
+    term_sequence = list(source.split(" "))
     terms = {
         # WARNING: This .lower() version creates unwanted duplication of broken up
         # uppercase words, eg 'R E A D M E' -> 'r e a d m e'. Everything else should be
@@ -440,7 +440,8 @@ def generate_string_subsequences(
         term.strip()
         for term in (
             term_sequence
-            + list(itertools.accumulate([f"{term} " for term in term_sequence]))
+            # + list(itertools.accumulate([f"{term} " for term in term_sequence]))
+            + [" ".join(term_sequence[i:j]) for i, j in itertools.combinations(range(len(term_sequence) + 1), 2)]
         )
     }
     return [
