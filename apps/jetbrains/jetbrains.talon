@@ -7,6 +7,7 @@ tag(): user.splits
 tag(): user.tabs
 tag(): user.command_search
 tag(): user.cursorless
+tag(): user.command_client
 
 # multiple_cursors.py support end
 
@@ -63,7 +64,7 @@ file hunt:
 recent: user.idea("action RecentFiles")
 
 surround [this] with <user.text> [over]:
-    idea("action SurroundWith")
+    user.idea("action SurroundWith")
     sleep(500ms)
     insert(text)
 # Making these longer to reduce collisions with real code dictation.
@@ -72,7 +73,7 @@ insert generated <user.text> [over]:
     sleep(500ms)
     insert(text)
 insert template <user.text> [over]:
-    idea("action InsertLiveTemplate")
+    user.idea("action InsertLiveTemplate")
     sleep(500ms)
     insert(text)
 create (template | snippet): user.idea("action SaveAsTemplate")
@@ -81,7 +82,7 @@ toggle recording: user.idea("action StartStopMacroRecording")
 change (recording | recordings): user.idea("action EditMacros")
 play recording: user.idea("action PlaybackLastMacro")
 play recording <user.text> [over]:
-    idea("action PlaySavedMacrosAction")
+    user.idea("action PlaySavedMacrosAction")
     insert(text)
     sleep(500ms)
     Key("enter")
