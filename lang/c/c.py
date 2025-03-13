@@ -8,6 +8,7 @@ mod = Module()
 ctx = Context()
 ctx.matches = r"""
 code.language: c
+code.language: cpp
 """
 
 
