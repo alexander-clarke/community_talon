@@ -18,7 +18,12 @@ mod.list("code_operators_assignment", desc="List of code operators for assignmen
 mod.list("code_operators_bitwise", desc="List of code operators for bitwise operations")
 mod.list("code_operators_lambda", desc="List of code operators for anonymous functions")
 mod.list(
-    "code_operators_math", desc="List of code operators for mathematical operations"
+    "code_operators_math",
+    desc="List of code operators for mathematical operations",
+)
+mod.list(
+    "code_operators_math_comparison",
+    desc="List of code operators for mathematical comparison operations",
 )
 mod.list("code_operators_pointer", desc="List of code operators for pointers")
 
@@ -61,10 +66,17 @@ class Operators(TypedDict, total=False):
     MATH_ADD: Operator
     MATH_MULTIPLY: Operator
     MATH_DIVIDE: Operator
+    MATH_INTEGER_DIVIDE: Operator
     MATH_MODULO: Operator
     MATH_EXPONENT: Operator
     MATH_EQUAL: Operator
     MATH_NOT_EQUAL: Operator
+    # For weak comparison operators. Strict comparison should use standard operators.
+    MATH_WEAK_EQUAL: Operator
+    MATH_WEAK_NOT_EQUAL: Operator
+    MATH_WEAK_AND: Operator
+    MATH_WEAK_OR: Operator
+    MATH_WEAK_NOT: Operator
     MATH_GREATER_THAN: Operator
     MATH_GREATER_THAN_OR_EQUAL: Operator
     MATH_LESS_THAN: Operator

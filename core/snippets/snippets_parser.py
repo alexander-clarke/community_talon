@@ -1,3 +1,4 @@
+import logging
 import re
 from pathlib import Path
 from typing import Callable, Union
@@ -81,7 +82,7 @@ def validate_snippet(document: SnippetDocument, snippet: Snippet) -> bool:
 
     for variable in snippet.variables:
         var_name = f"${variable.name}"
-        if var_name not in snippet.body:
+        if not is_variable_in_body(variable.name, snippet.body):
             error(
                 document.file,
                 document.line_body,
@@ -106,6 +107,11 @@ def validate_snippet(document: SnippetDocument, snippet: Snippet) -> bool:
             is_valid = False
 
     return is_valid
+
+
+def is_variable_in_body(variable_name: str, body: str) -> bool:
+    # $value or ${value} or ${value:default}
+    return re.search(rf"\${variable_name}|\${{{variable_name}.*}}", body) is not None
 
 
 def combine_variables(
@@ -278,7 +284,7 @@ def parse_context_line(
         return
 
     if key in keys:
-        error(file, line, f"Duplicate key '{key}'")
+        warn(file, line, f"Duplicate key '{key}'")
 
     keys.add(key)
 
@@ -297,7 +303,7 @@ def parse_context_line(
             if key.startswith("$"):
                 parse_variable(file, line, get_variable, key, value)
             else:
-                error(file, line, f"Invalid key '{key}'")
+                warn(file, line, f"Unknown key '{key}'")
 
 
 def parse_variable(
@@ -324,7 +330,7 @@ def parse_variable(
         case "wrapperScope":
             get_variable(name).wrapper_scope = value
         case _:
-            error(file, line_numb, f"Invalid variable key '{key}'")
+            warn(file, line_numb, f"Unknown variable key '{key}'")
 
 
 def parse_body(text: str) -> Union[str, None]:
@@ -342,4 +348,8 @@ def parse_vector_value(value: str) -> list[str]:
 
 
 def error(file: str, line: int, message: str):
-    print(f"ERROR | {file}:{line+1} | {message}")
+    logging.error(f"{file}:{line+1} | {message}")
+
+
+def warn(file: str, line: int, message: str):
+    logging.warning(f"{file}:{line+1} | {message}")

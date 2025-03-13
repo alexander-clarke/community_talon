@@ -59,6 +59,7 @@ code_languages = [
     Language("config","config", ["ini"])
     # These languages doesn't actually have a language mode, but we do have snippets.
     Language("cpp", "see plus plus", ["cpp", "hpp"]),
+    Language("csv", "csv", ["csv"]),
     Language("html", "html", ["html"]),
     Language("json", "json", ["json"]),
     Language("shellscript", "shell script", ["sh"]),
