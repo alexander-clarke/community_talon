@@ -2,6 +2,7 @@ app: microsoft_teams
 os: windows
 os: linux
 -
+tag(): user.emoji
 
 # Shortcut reference
 # https://support.office.com/en-us/article/keyboard-shortcuts-for-microsoft-teams-2e8e2a70-e8d8-4a19-949b-4c36dd5292d2
