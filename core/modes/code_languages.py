@@ -56,9 +56,9 @@ code_languages = [
     Language("typescriptreact", "type script react", ["tsx"]),
     # Language("vba", "vba", ["vba"]),
     Language("vimscript", "vim script", ["vim", "vimrc"]),
-    Language("config","config", ["ini"]),
+    Language("config", "config", ["ini"]),
     # These languages doesn't actually have a language mode, but we do have snippets.
-    Language("cpp", "see plus plus", ["cpp", "hpp"]),
+    Language("cpp", "see plus plus", []),
     Language("csv", "csv", ["csv"]),
     Language("html", "html", ["html"]),
     Language("json", "json", ["json"]),
