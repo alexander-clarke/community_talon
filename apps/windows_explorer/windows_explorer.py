@@ -22,7 +22,7 @@ and app.exe: /^files\.exe$/i
 """
 
 # many commands should work in most save/open dialog.
-# note the "show options" stuff won't work unless work
+# note the "show options" stuff won't work
 # unless the path is displayed in the title, which is rare for those
 apps.windows_file_browser = """
 os: windows
