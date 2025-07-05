@@ -92,7 +92,7 @@ end drag | drag end: user.mouse_drag_end()
   key("{modifiers}:up")
   # close the mouse grid
 wheel down: user.mouse_scroll_down()
-deck(pedal_left): user.mouse_scroll_down()
+# deck(pedal_left): user.mouse_scroll_down()
 wheel down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
