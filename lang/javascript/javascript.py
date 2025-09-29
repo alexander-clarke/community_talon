@@ -1,5 +1,6 @@
 from talon import Context, Module, actions, settings
 
+from ...core.described_functions import create_described_insert_between
 from ..tags.operators import Operators
 
 mod = Module()
@@ -11,24 +12,7 @@ code.language: javascriptreact
 code.language: typescriptreact
 """
 
-ctx.lists["user.code_common_function"] = {
-    "abs": "Math.abs",
-    "entries": "Object.entries",
-    "fetch": "fetch",
-    "floor": "Math.floor",
-    "from entries": "Object.fromEntries",
-    "keys": "Object.keys",
-    "log": "console.log",
-    "max": "Math.max",
-    "min": "Math.min",
-    "print": "console.log",
-    "round": "Math.round",
-    "values": "Object.values",
-}
-
-mod.list("code_common_member_function", "Function to use in a dotted chain, eg .foo()")
-
-ctx.lists["user.code_common_member_function"] = {
+ctx.lists["user.code_common_method"] = {
     "catch": "catch",
     "concat": "concat",
     "filter": "filter",
@@ -77,7 +61,7 @@ ctx.lists["user.code_keyword"] = {
 
 operators = Operators(
     # code_operators_array
-    SUBSCRIPT=lambda: actions.user.insert_between("[", "]"),
+    SUBSCRIPT=create_described_insert_between("[", "]"),
     # code_operators_assignment
     ASSIGNMENT=" = ",
     ASSIGNMENT_OR=" ||= ",
