@@ -332,12 +332,11 @@ class Actions:
                     break
         apps = ui.apps(background=False)
         apps = [application for application in ui.apps(background=False) if application.name == name or (app.platform == "windows" and application.exe.split(os.path.sep)[-1] == name)]
-        print(apps)
         if len(apps) > 1:
           filtered_apps = list(filter(lambda application: is_valid_window(application.active_window), apps))
           if filtered_apps:
             apps = filtered_apps
-        print(list(apps))
+            print("Filtered apps: " + str(list(apps)))
         if apps:
           return apps[0]
         raise RuntimeError(f'App not running: "{name}"')
