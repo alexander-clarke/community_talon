@@ -9,10 +9,10 @@ list: user.delimiter_pair
 # round: ( )
 # pad: space space
 
-round: ( )
+circle: ( )
 box: [ ]
 diamond: < >
-curly: { }
+curvy: { }
 twin: "' '"
 quad: '" "'
 skis: ` `
