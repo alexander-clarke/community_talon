@@ -51,6 +51,7 @@ class Symbol:
 currency_symbols = [
     Symbol("$", ["dollar sign"], ["dollar"]),
     Symbol("£", ["pound sign"], ["pound"]),
+    Symbol("€", ["euro sign"], ["euro"]),
 ]
 
 symbols = [
@@ -65,15 +66,18 @@ symbols = [
     Symbol("#", ["hash sign", "number sign"], ["hash"]),
     Symbol("%", ["percent sign"], ["percent"]),
     Symbol("@", ["at symbol", "at sign"]),
+    Symbol("°", ["degree sign"], ["degree", "degrees"]),
     Symbol("&", ["ampersand", "and sign"], ["amper"]),
     Symbol("-", ["hyphen"], ["minus", "dash"]),
+    Symbol("–", ["en dash", "nut dash"]),
+    Symbol("—", ["em dash", "mutton dash"]),
     Symbol("=", None, ["equals"]),
     Symbol("+", None, ["plus"]),
     Symbol("~", None, ["tilde"]),
     Symbol("_", None, ["down score", "underscore"]),
-    Symbol("(", ["paren", "L paren", "left paren", "round"], None),
-    Symbol(")", ["R paren", "right paren", "right round"], None),
-    Symbol("[", None,["brack", "L brack", "bracket", "L bracket", "left bracket", "square", "L square", "left square","square"],),
+    Symbol("(", ["paren", "L paren", "left paren", "round"]),
+    Symbol(")", ["R paren", "right paren", "right round"]),
+    Symbol("[", None,["brack", "L brack", "bracket", "L bracket", "left bracket", "square", "L square", "left square",],),
     Symbol("]", None, ["R brack", "R bracket", "right bracket", "R square", "right square"]),
     Symbol("/", ["forward slash"], ["slash"]),
     Symbol("\\", None, ["backslash"]),
