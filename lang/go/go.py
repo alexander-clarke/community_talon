@@ -55,8 +55,8 @@ operators = Operators(
     POINTER_INDIRECTION="*",
 )
 
-mod.list("user.float_type_bit_width", desc="Float type bit widths")
-mod.list("user.complex_type_bit_width", desc="Complex type bit widths")
+mod.list("float_type_bit_width", desc="Float type bit widths")
+mod.list("complex_type_bit_width", desc="Complex type bit widths")
 
 
 @mod.capture(rule="[{user.stdint_signed}] int {user.c_type_bit_width}")
