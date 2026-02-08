@@ -82,7 +82,7 @@ def go_complex_type(m) -> str:
 
 @ctx.capture(
     "user.code_type",
-    rule="{user.code_type} | {user.go_int_type} | {user.go_float_type} | {user.go_complex_type}",
+    rule="{user.code_type} | <user.go_int_type> | <user.go_float_type> | <user.go_complex_type>",
 )
 def code_type(m) -> str:
     """All go types"""
