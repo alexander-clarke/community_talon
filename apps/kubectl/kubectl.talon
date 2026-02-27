@@ -64,3 +64,7 @@ cube detach:
     key("ctrl-p")
     key("ctrl-q")
 cube shell: user.insert_between("kubectl exec -it ", " -- /bin/bash")
+
+cue bens | cube namespace: "kubens "
+cube context: "kubectx "
+canines: "k9s\n"
