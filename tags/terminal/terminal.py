@@ -1,10 +1,6 @@
 from typing import Optional
 
-<<<<<<< HEAD
-from talon import Module, Context, actions
-=======
 from talon import Context, Module, actions
->>>>>>> implement-file-manager-terminal
 
 mod = Module()
 
