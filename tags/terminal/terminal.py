@@ -1,6 +1,10 @@
 from typing import Optional
 
+<<<<<<< HEAD
 from talon import Module, Context, actions
+=======
+from talon import Context, Module, actions
+>>>>>>> implement-file-manager-terminal
 
 mod = Module()
 
@@ -17,7 +21,7 @@ class Actions:
         """Lists all directories including hidden"""
 
     def terminal_change_directory(path: str):
-        """Lists change directory"""
+        """Changes current directory"""
 
     def terminal_change_directory_root():
         """Root of current drive"""
@@ -34,35 +38,40 @@ class Actions:
     def terminal_kill_all():
         """kills the running command"""
 
+    def terminal_escape_relative_file(string: str) -> str:
+        """Escapes a string for a given terminal"""
+        return f'./"{string}"'
+
+    def terminal_escape_relative_directory(string: str) -> str:
+        """Escapes a string for a given terminal"""
+        return f'"{string}/"'
+
 
 @ctx.action_class("user")
 class TerminalActions:
     # user.file_manager
-    # def file_manager_current_path():
-    #     pass
-
-    # def file_manager_show_properties():
-    #     """Shows the properties for the file"""
-
     def file_manager_open_directory(path: str):
         """opens the directory that's already visible in the view"""
-        actions.user.terminal_change_directory(path)
+        actions.user.terminal_change_directory(
+            actions.user.terminal_escape_relative_directory(path)
+        )
 
     def file_manager_open_parent():
-        actions.user.terminal_change_directory("..")
+        actions.user.file_manager_open_directory("..")
 
     def file_manager_select_directory(path: str):
         """selects the directory"""
-        actions.insert(path + "/")
+        actions.insert(actions.user.terminal_escape_relative_directory(path))
 
     def file_manager_open_file(path: str):
         """opens the file"""
-        actions.insert("./" + path)
+        actions.insert(actions.user.terminal_escape_relative_path(path))
         actions.key("enter")
 
     def file_manager_select_file(path: str):
         """selects the file"""
-        actions.insert(path)
+        actions.insert(actions.user.terminal_escape_relative_path(path))
 
-    # def file_manager_refresh_title():
-    #     return
+    def file_manager_new_folder(name: str):
+        """Creates a new folder in a gui filemanager or inserts the command to do so for terminals"""
+        actions.insert(f'mkdir "{name}"')
