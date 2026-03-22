@@ -25,7 +25,7 @@ bar run: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
 bar test: user.vscode("workbench.view.testing.focus")
-bar (switch|toggle): user.vscode("workbench.action.toggleSidebarVisibility")
+bar (switch | toggle): user.vscode("workbench.action.toggleSidebarVisibility")
 
 # Symbol search
 symbol hunt [<user.text>]:
@@ -42,7 +42,7 @@ symbol hunt all [<user.text>]:
 panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
-panel switch: user.vscode("workbench.action.togglePanel")
+panel (switch | toggle): user.vscode("workbench.action.togglePanel")
 panel terminal: user.vscode("workbench.action.terminal.focus")
 focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
@@ -79,6 +79,9 @@ file hunt (pace | paste):
 file copy name: user.vscode("fileutils.copyFileName")
 file copy path: user.vscode("copyFilePath")
 file copy local [path]: user.vscode("copyRelativeFilePath")
+file submit:
+    edit.save()
+    app.tab_close()
 file create sibling: user.vscode_and_wait("explorer.newFile")
 file create: user.vscode("workbench.action.files.newUntitledFile")
 file create relative: user.vscode("fileutils.newFile")
@@ -123,7 +126,7 @@ refactor rename: user.vscode("editor.action.rename")
 refactor this: user.vscode("editor.action.refactor")
 
 #code navigation
-(go declaration | follow): user.vscode("editor.action.revealDefinition")
+go declaration | follow: user.vscode("editor.action.revealDefinition")
 go back: user.vscode("workbench.action.navigateBack")
 go forward: user.vscode("workbench.action.navigateForward")
 go implementation: user.vscode("editor.action.goToImplementation")
@@ -290,7 +293,7 @@ cell run: user.vscode("notebook.cell.execute")
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
 
-journal [<phrase>]: 
-  key(ctrl-shift-j)
-  
-  insert(phrase or "")
+journal [<phrase>]:
+    key(ctrl-shift-j)
+
+    insert(phrase or "")
