@@ -4,6 +4,7 @@ app: vscode
 # See [our vscode docs](./README.md#terminal)
 win.title: /focus:\[Terminal\]/
 -
+
 tag(): terminal
 
 tag(): user.generic_windows_shell
