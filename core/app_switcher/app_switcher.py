@@ -336,14 +336,26 @@ class Actions:
                     name = full_application_name
                     break
         apps = ui.apps(background=False)
-        apps = [application for application in ui.apps(background=False) if application.name == name or (app.platform == "windows" and application.exe.split(os.path.sep)[-1] == name)]
+        apps = [
+            application
+            for application in ui.apps(background=False)
+            if application.name == name
+            or (
+                app.platform == "windows"
+                and application.exe.split(os.path.sep)[-1] == name
+            )
+        ]
         if len(apps) > 1:
-          filtered_apps = list(filter(lambda application: is_valid_window(application.active_window), apps))
-          if filtered_apps:
-            apps = filtered_apps
-            print("Filtered apps: " + str(list(apps)))
+            filtered_apps = list(
+                filter(
+                    lambda application: is_valid_window(application.active_window), apps
+                )
+            )
+            if filtered_apps:
+                apps = filtered_apps
+                print("Filtered apps: " + str(list(apps)))
         if apps:
-          return apps[0]
+            return apps[0]
         raise RuntimeError(f'App not running: "{name}"')
 
     def switcher_focus(name: str):
@@ -450,6 +462,7 @@ def update_launch_list():
     ctx.lists["self.launch"] = actions.user.create_spoken_forms_from_map(
         launch, words_to_exclude
     )
+
 
 def is_valid_window(window: ui.Window) -> bool:
     # return True
