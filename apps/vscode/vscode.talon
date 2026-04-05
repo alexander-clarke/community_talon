@@ -26,6 +26,7 @@ bar run: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
 bar test: user.vscode("workbench.view.testing.focus")
+bar tabs: user.run_rpc_command("andreas.tabs.focus")
 bar (switch | toggle): user.vscode("workbench.action.toggleSidebarVisibility")
 
 # Symbol search
@@ -69,10 +70,12 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
-file hunt [<user.text>]:
-    user.vscode("workbench.action.quickOpen")
-    sleep(50ms)
-    insert(text or "")
+file hunt [<user.text>]: user.run_rpc_command("andreas.searchFiles", text or "")
+
+# file hunt [<user.text>]:
+#     user.vscode("workbench.action.quickOpen")
+#     sleep(50ms)
+#     insert(text or "")
 file hunt (pace | paste):
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
@@ -153,6 +156,8 @@ close other tabs: user.vscode("workbench.action.closeOtherEditors")
 close all tabs: user.vscode("workbench.action.closeAllEditors")
 close tabs way right: user.vscode("workbench.action.closeEditorsToTheRight")
 close tabs way left: user.vscode("workbench.action.closeEditorsToTheLeft")
+slot {user.letter} [{user.letter}]:
+    user.run_rpc_command("andreas.focusTab", "{letter_1}{letter_2 or ''}")
 
 # Folding
 fold that: user.vscode("editor.fold")
