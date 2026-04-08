@@ -70,12 +70,12 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
-file hunt [<user.text>]: user.run_rpc_command("andreas.searchFiles", text or "")
+file [new] hunt [<user.text>]: user.run_rpc_command("andreas.searchFiles", text or "")
 
-# file hunt [<user.text>]:
-#     user.vscode("workbench.action.quickOpen")
-#     sleep(50ms)
-#     insert(text or "")
+file old hunt [<user.text>]:
+    user.vscode("workbench.action.quickOpen")
+    sleep(50ms)
+    insert(text or "")
 file hunt (pace | paste):
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
@@ -104,7 +104,7 @@ file delete:
     sleep(150ms)
 file open folder: user.vscode("revealFileInOS")
 file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
-save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
+[file] save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
