@@ -1,6 +1,6 @@
-parrot(tut):
-  mouse_click(1)
-control mouse: tracking.control1_toggle()
+parrot(tut): mouse_click(1)
+(legacy | control) mouse: tracking.control1_toggle()
+(sea | see | cee) mouse: tracking.control_toggle()
 parrot(cluck): tracking.control_toggle()
 control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()
@@ -82,15 +82,15 @@ right drag | righty drag:
     user.grid_close()
 
 middle drag:
-  user.mouse_drag(2)
-  # close the mouse grid
-  user.grid_close()
+    user.mouse_drag(2)
+    # close the mouse grid
+    user.grid_close()
 end drag | drag end: user.mouse_drag_end()
 <user.modifiers> drag:
-  key("{modifiers}:down")
-  user.mouse_drag(0)
-  key("{modifiers}:up")
-  # close the mouse grid
+    key("{modifiers}:down")
+    user.mouse_drag(0)
+    key("{modifiers}:up")
+    # close the mouse grid
 wheel down: user.mouse_scroll_down()
 # deck(pedal_left): user.mouse_scroll_down()
 wheel down here:
