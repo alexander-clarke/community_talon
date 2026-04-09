@@ -23,7 +23,7 @@ not speech.engine: dragon
 # engine, this controls Talon.
 ^go to sleep [<phrase>]$: speech.disable()
 
-^drowse [<phrase>]$: speech.disable()
+drowse [<phrase>]$: speech.disable()
 
 ^talon sleep [<phrase>]$:
     speech.disable()
@@ -37,6 +37,6 @@ not speech.engine: dragon
     user.mouse_sleep()
     speech.disable()
 
-^touch and go to sleep [<phrase>]$: 
-  mouse_click(0)
-  speech.disable()
+^touch and go to sleep [<phrase>]$:
+    mouse_click(0)
+    speech.disable()
