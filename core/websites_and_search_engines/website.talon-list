@@ -6,15 +6,19 @@ talon slack: http://talonvoice.slack.com/messages/help
 talon wiki: https://talon.wiki/
 talon practice: https://chaosparrot.github.io/talon_practice/
 talon repository search: https://search.talonvoice.com/search/
-amazon: https://www.amazon.com/
+amazon: https://www.amazon.co.uk/
+amazon prime: https://www.amazon.co.uk/gp/video/storefront
 dropbox: https://dropbox.com/
 google: https://www.google.com/
 g calendar: https://calendar.google.com
 google maps: https://maps.google.com/
+g maps: https://maps.google.com/
 google scholar: https://scholar.google.com/
 gmail: https://mail.google.com/
 g meet: https://meet.google.com/
 g drive: https://drive.google.com
+g docs: https://docs.google.com/document/
+g sheets: https://docs.google.com/spreadsheets/
 gemini: https://gemini.google.com/
 github: https://github.com/
 gist: https://gist.github.com/
@@ -38,6 +42,8 @@ ziggy meta: https://www.meta.com/en-gb/experiences/4859120967501314/
 steam partner: https://partner.steamgames.com/dashboard
 quest developer: https://developer.oculus.com/manage/applications/4859120967501314/
 starling: https://app.starlingbank.com/login
+zero: https://login.xero.com/identity/user/login
+jere: https://stardustcollective.atlassian.net/jira/software/c/projects/ZCA/boards/1
 
 ocado: ocado.com
 waitrose: https://www.waitrose.com/
@@ -47,13 +53,11 @@ photo feeler: photofeeler.com
 photos: photos.google.com
 ticktock: tiktok.com
 keyboard config: https://configure.zsa.io/moonlander/layouts/7Vl6Y/latest/0
-zero: https://login.xero.com/identity/user/login
 find my phone: https://www.google.com/android/find
 stackoverflow: https://stackoverflow.com
 music YouTube: https://music.youtube.com/
 YouTube studio: https://studio.youtube.com
 discord timestamp: https://hammertime.cyou/en-GB
-jere: https://stardustcollective.atlassian.net/jira/software/c/projects/ZCA/boards/1
 connections: https://www.nytimes.com/games/connections
 linkedin: https://www.linkedin.com
 linked in me: https://www.linkedin.com/in/alexander-clarke-31aa22152/
@@ -61,10 +65,6 @@ unreal property helpers: https://benui.ca/unreal/uproperty/
 unreal specifiers: https://benui.ca/unreal/uproperty/
 
 teams: https://teams.microsoft.com/v2/
-sharepoint: https://cappandco.sharepoint.com/sites/CappfinityHome
-arbor: https://app.arborxr.com/
-arbor Pico: https://app.arborxr.com/e3656c4f-759a-48f4-b00b-faee2bae7140/devices/d1b3be83-9eeb-42fc-ba28-25cee6d090f6/content/managed-content
-linear: https://linear.app/cappvr/team/CAP/active
 
 duolingo: https://www.duolingo.com/learn
 santander: "https://retail.santander.co.uk/olb/app/logon/access/#/logon"
