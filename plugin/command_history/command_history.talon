@@ -1,3 +1,6 @@
+tag: disabled
+-
+
 command history: user.history_toggle()
 command history close: user.history_disable()
 command history clear: user.history_clear()
