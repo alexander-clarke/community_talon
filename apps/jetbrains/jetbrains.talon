@@ -20,7 +20,6 @@ done | finish: user.idea("action EditorCompleteStatement")
 # Copying
 grab <number>: user.idea_grab(number)
 quick actions: user.idea("action ShowIntentionActions")
-action [<user.text>]: user.deprecate_command("2024-09-02", "action", "please")
 # Refactoring
 refactor: user.idea("action Refactorings.QuickListPopupAction")
 refactor <user.text>:
@@ -193,8 +192,7 @@ toggle [line] breakpoint: user.idea("action ToggleLineBreakpoint")
 toggle method breakpoint: user.idea("action ToggleMethodBreakpoint")
 run menu: user.idea("action ChooseRunConfiguration")
 run test: user.idea("action RunClass")
-debug start:
-    user.idea("action ChooseDebugConfiguration")
+debug start: user.idea("action ChooseDebugConfiguration")
 run [test] again: user.idea("action Rerun")
 debug test: user.idea("action DebugClass")
 step over: user.idea("action StepOver")
